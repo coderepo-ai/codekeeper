@@ -1,0 +1,168 @@
+/* Enter your custom styles here */
+.formlabel {
+    min-width: 192px;
+    width: 37%;
+    margin-top: 0.5rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    color: black;
+
+}
+
+/* FMB FTE Planning Matrix header color*/
+.sapMIBar-CTX .sapMLabel {
+    color: black;
+}
+
+.HeaderText {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+/* FMB FTE Planning Matrix messae strip color*/
+.classMsgStrip.sapMMsgStrip {
+    height: 0.1rem;
+}
+
+.classMsgStrip .sapMText {
+        margin-top: -0.5rem;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: black;
+    font-weight: bold;
+
+}
+
+
+
+.sapMTitle {
+    color: black;
+    /*font-weight: bold;*/
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+}
+
+.sapMText {
+    color: black;
+}
+
+
+
+.footnote {
+
+    margin-left: 3rem;
+    color: black;
+
+    margin-top: 0.4rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+}
+
+.footnote2 {
+
+    color: black;
+
+    margin-left: 25.2rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+}
+
+.contractinput {
+    width: 102%;
+    margin-left: -1rem;
+}
+
+.sapMInputBaseContentWrapper {
+    width: 99%;
+    margin-left: -0.5rem;
+}
+
+
+.labelInp {
+    min-width: 100px;
+    width: 20%;
+    margin-top: 0.5rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+}
+
+.sapMPanel {
+    margin-left: 24rem;
+}
+
+/*.displaybutton{
+	margin-left: 23rem;
+}*/
+
+.displaybutton {
+    margin-left: 1rem;
+}
+
+.kdmHbox {
+    margin-left: 0rem;
+}
+
+
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0px;
+}
+
+/*.formlabelkdm{*/
+/*	margin-left: -2rem;*/
+/*}*/
+
+/*.icons>span{*/
+/*	border-radius: 11px !important;*/
+/*	background-color: #000;*/
+/*}*/
+/*.icons>span::title{*/
+/*	border: 2px solid black;*/
+/*}*/
+
+/*.icons>span>title{*/
+/*	border: 2px solid black;*/
+/*}*/
+.icons {
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+
+
+/*.icons>span:hover {*/
+/*    border: 2px solid black;*/
+/*    border: 1px solid red;*/
+/*}*/
+
+#_icon1::after {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+
+#_icon1:hover::after {
+    display: block;
+}
+
+
+
+
+
+
+.buttonClass {
+    width: 7%;
+    min-width: 1.25rem;
+    margin-left: 36rem;
+    margin-top: -1.5rem;
+}

@@ -1,0 +1,96 @@
+<mvc:View controllerName="ZPlannerFMB.ZPlannerFMB.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" class="Headertext" showHeader="false" enableScrolling="false">
+					<content>
+						<Bar class="toolbarClass">
+							<contentMiddle>
+								<Label text="{i18n>title}" class="HeaderText"/>
+							</contentMiddle>
+							<contentRight>
+								<Label id="idUserName" text="" design="Bold" class=""/>
+							</contentRight>
+						</Bar>
+						<VBox alignItems="Center">
+							<Label></Label>
+							<HBox>
+								<Label text="Contract :" class="labelInp"/>
+								<Input id="contractNo" class="contractinput"/>
+								<Label text=""/>
+								<Button text="Display" type="Emphasized" class="displaybutton" press="onpressDisplay"></Button>
+							</HBox>
+						</VBox>
+						<Panel id="FTEform" visible="false" class="sapMPanel" width="45%">
+							<!--<f:SimpleForm class="formTitleSelect" labelSpanXL="8" labelSpanL="8" labelSpanM="12" emptySpanXL="1" emptySpanL="1" emptySpanM="1"-->
+							<!--	columnsXL="1" columnsL="1" columnsM="1">-->
+							<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<f:content>
+									<VBox>
+										<!--<HBox>-->
+										<!--	<MessageStrip id="idMsgStrip" class="sapUiSmallMarginBottom classMsgStrip" text="Note : Please select only from drop-down." type="None" showIcon="true" visible="false"/>-->
+										<!--</HBox>-->
+										<HBox>
+											<!--<Label></Label>-->
+											<Label text="FMB FTE Planner :" class="formlabel"/>
+											<ComboBox items="{masterDataModelRoles>/Admin}" width="15rem" id="select1" change="changePlanner1"
+												selectedKey="{displayApprovedPlanData>/PlannerId}" value="{displayApprovedPlanData>/PlannerName}" editable="false">
+												<items>
+													<core:ListItem text="{masterDataModelRoles>Name}" key="{masterDataModelRoles>Pernr}"/>
+												</items>
+											</ComboBox>
+											<!--<core:Icon src="sap-icon://information" class="icons"-->
+											<!--	tooltip="FMB FTE planner to be selected out of the PM's \n assigned for all projects in a contract."></core:Icon>-->
+											<core:Icon src="sap-icon://information" class="icons" tooltip="{i18n>tooltip}"></core:Icon>
+										</HBox>
+										<HBox>
+											<!--<Button icon="sap-icon://information"-->
+											<!--	tooltip="Delivery manager of service line with maximum contribution (~80% or above) / or DU delivery manager."/>-->
+											<Label text="Delivery Manager :" class="formlabel"/>
+											<ComboBox items="{masterDataModelRoles>/DUManager}" width="15rem" change="changeDUManager" id="select2"
+												selectedKey="{displayApprovedPlanData>/DumanagerId}" value="{displayApprovedPlanData>/DumanagerName}" editable="false">
+												<items>
+													<core:ListItem text="{masterDataModelRoles>Name}" key="{masterDataModelRoles>Pernr}"/>
+												</items>
+											</ComboBox>
+											<!--<core:Icon src="sap-icon://information" class="icons"-->
+											<!--	tooltip="Delivery manager of service line with maximum contribution \n (~80% or above) / or DU delivery manager."></core:Icon>-->
+											<core:Icon src="sap-icon://information" class="icons" tooltip="{i18n>tooltip2}"></core:Icon>
+										</HBox>
+										<!--<HBox>-->
+										<!--	<Label text="DU/PU Head :" class="formlabel"/>-->
+										<!--	<ComboBox items="{masterDataModelRoles>/DUHead}" width="15rem" id="select3" change="changePlanner"-->
+										<!--		selectedKey="{displayApprovedPlanData>/DuheadId}" value="{displayApprovedPlanData>/DuheadName}" editable="false">-->
+										<!--		<items>-->
+										<!--			<core:ListItem text="{masterDataModelRoles>Name}" key="{masterDataModelRoles>Pernr}"/>-->
+										<!--		</items>-->
+										<!--	</ComboBox>-->
+										<!--<core:Icon src="sap-icon://information" class="icons"-->
+										<!--	tooltip="PU head of service line with maximum contribution \n (~80% or above) / or DU Head."></core:Icon>-->
+										<!--	<core:Icon src="sap-icon://information" class="icons"-->
+										<!--		 tooltip="{i18n>tooltip3}"></core:Icon>-->
+										<!--</HBox>-->
+										<HBox class="kdmHbox">
+											<Label text="KDM :" class="formlabel"/>
+											<Input editable="false" width="15rem" id="kdmInput" value="{path:'displayApprovedPlanData>/KdmName'}"/>
+										</HBox>
+									</VBox>
+								</f:content>
+							</f:SimpleForm>
+						</Panel>
+					</content>
+					<Button id="savebutton" type="Emphasized" class="buttonClass" width="7%" text="Save" press="onsavepress" visible="false"/>
+					<Button id="savebuttonsusho" class="buttonClass" width="7%" text="Save" press="onsavepress" visible="false"/>
+
+					<Text text="Only contract controller is authorized to edit the FMB FTE Planner matrix." visible="false" class="footnote2" id="footnote2"></Text>
+					<Text
+						text="Contracts with single service line/maximum contribution from single service line (~80% or above) will be governed by respective Service line otherwise FTE plan to be governed by DU."
+						visible="false" class="footnote" id="footnote"></Text>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
